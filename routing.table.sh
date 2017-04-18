@@ -5,10 +5,18 @@
 
 #Set here the interface name you what to use for the exceptional routes
 ETH_NAME="en12"
+
+#write here your LAN DNS Server
 DNS_IP="22.0.0.1"
+
 #Exception route list. Traffic sent to $DEST_HOSTS and $DEST_NETS will go through $ETH_NAME interface
 DEST_HOSTS="10.12.13.14"
 DEST_NETS="192.168.0/16 23.4/16"
+#you don't need to change anything else
+
+
+
+
 
 DEST_HOSTS="$DNS_IP $DEST_HOSTS"
 
