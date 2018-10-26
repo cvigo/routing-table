@@ -10,8 +10,8 @@ ETH_NAME="en12"
 DNS_IP="22.0.0.1"
 
 #Exception route list. Traffic sent to $DEST_HOSTS and $DEST_NETS will go through $ETH_NAME interface
-DEST_HOSTS="10.12.13.14"
-DEST_NETS="192.168.0/16 23.4/16"
+DEST_HOSTS="23.4.28.21 22.17.163.203"
+DEST_NETS="23.4/16 10.48/16 10.51/16 192.168/16"
 #you don't need to change anything else
 
 
@@ -26,7 +26,9 @@ ETH_ROUTER=$(netstat -nr | grep default | grep $ETH_NAME | awk '{print $2}')
 echo "Default router for $ETH_NAME is $ETH_ROUTER"
 echo '----------------------'
 
-for DEST_HOST in $DEST_HOSTS
+
+echo 'Removing old routes. No worries if you get "route... not in table" errors...'
+for DEST_HOST in $DEST_HOSTS 
 do
   sudo route delete -host $DEST_HOST
   sudo route add -host $DEST_HOST $ETH_ROUTER
