@@ -34,7 +34,7 @@ do
 done
 
 #setting up the name resolvers for well known domain suffix
-for suffix in es com net org be co au edu biz io tv eu nz uk ie bbva gl gal nl
+for suffix in es com net org be co au edu biz io tv eu nz uk ie bbva gl gal nl ee in help
 do
     echo 'nameserver 8.8.8.8' | tee /etc/resolver/$suffix
 done
