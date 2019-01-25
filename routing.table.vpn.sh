@@ -6,7 +6,8 @@ if (( EUID != 0 )); then
 fi
 
 #These might be different in your system
-WIRELESS_INTERFACE=en0
+WIRELESS_INTERFACE=en0 #WiFi
+# WIRELESS_INTERFACE=en8 #modem 4g
 TUNNEL_INTERFACE=ppp0
 
 #this might need to be changed in Linux
@@ -34,7 +35,7 @@ do
 done
 
 #setting up the name resolvers for well known domain suffix
-for suffix in es com net org be co au edu biz io tv eu nz uk ie bbva gl gal nl ee in help de
+for suffix in es com net org be co au edu biz io tv eu nz uk ie bbva gl gal nl ee in help de fm it sh
 do
     echo 'nameserver 8.8.8.8' | tee /etc/resolver/$suffix
 done
