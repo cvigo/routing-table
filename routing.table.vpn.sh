@@ -14,7 +14,7 @@ TUNNEL_INTERFACE=ppp0
 GATEWAY=$(netstat -nrf inet | grep default | grep $WIRELESS_INTERFACE | awk '{print $2}')
 
 # Request to IPs within the following network masks are routed through the VPN interface. Add as many as you need.
-DEST_NETS="192.168/16 23.4/16 22.17/16 10.48/16 10.51/16 10.50/16 10.111/16 100.80/16 100.71/16 34.246/16 34.243/16"
+DEST_NETS="192.168/16 23.4/16 22.17/16 10.48/16 10.51/16 10.50/16 10.111/16 100.80/16 100.71/16 34.246/16 34.243/16 10.52/16 10.55/16"
 
 # Default router is set to use the WiFi interface
 echo "Resetting routes with gateway => $GATEWAY"
